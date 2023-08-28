@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: aliceblue;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+p {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  margin: 0 auto;
+  background: rgb(131, 58, 180);
+  background: radial-gradient(
+    circle,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 41%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  color: #fff;
+  width: fit-content;
+  padding: 1.25em;
+  border-radius: 50%;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
+  font-family: "Rowdies", cursive;
+  letter-spacing: 2px;
+  border: 5px solid ghostwhite;
+  animation: rotate-diagonal-1 0.4s linear both;
+  position: relative;
+}
+
+p::after {
+  content: "+1";
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  font-family: "Rowdies", cursive;
+  font-size: 0.9rem;
+  color: ghostwhite;
+  opacity: 1;
+  animation: glimmer 1s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes rotate-diagonal-1 {
+  0% {
+    transform: rotate3d(1, 1, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(1, 1, 0, -180deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, -360deg);
+  }
+}
+
+@keyframes glimmer {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
